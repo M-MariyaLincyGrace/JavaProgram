@@ -1,0 +1,57 @@
+import java.time.*;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Scanner;
+
+public class DateDifference {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter date and time in DD-MM-YYYY hh:mm format:");
+        String userInput = scanner.nextLine();
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        LocalDateTime inputDateTime;
+
+        try {
+            inputDateTime = LocalDateTime.parse(userInput, formatter);
+        } catch (Exception e) {
+            System.out.println("Invalid date.");
+            return;
+        }
+
+        LocalDateTime currentDateTime = LocalDateTime.now();
+
+        long years = ChronoUnit.YEARS.between(inputDateTime, currentDateTime);
+        if (years > 0) {
+            System.out.println("Difference in years: " + years);
+            return;
+        }
+
+        long months = ChronoUnit.MONTHS.between(inputDateTime, currentDateTime);
+        if (months > 0) {
+            System.out.println("Difference in months: " + months);
+            return;
+        }
+
+        long weeks = ChronoUnit.WEEKS.between(inputDateTime, currentDateTime);
+        if (weeks > 0) {
+            System.out.println("Difference in weeks: " + weeks);
+            return;
+        }
+
+        long days = ChronoUnit.DAYS.between(inputDateTime, currentDateTime);
+        if (days > 0) {
+            System.out.println("Difference in days: " + days);
+            return;
+        }
+
+        long minutes = ChronoUnit.MINUTES.between(inputDateTime, currentDateTime);
+        if (minutes > 0) {
+            System.out.println("Difference in minutes: " + minutes);
+            return;
+        }
+
+        System.out.println("Invalid date.");
+    }
+}
