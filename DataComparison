@@ -1,0 +1,56 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashSet;
+
+public class DataComparison {
+	 public static void main(String[] args) {
+	        HashSet<String> file1Emails = readEmailsFromFile("C:\\Users\\Dell\\eclipse-workspace\\Java\\Input\\file1.txt");
+	        HashSet<String> file2Emails = readEmailsFromFile("C:\\Users\\Dell\\eclipse-workspace\\Java\\Input\\file2.txt");
+
+	        // Emails present in both files
+	        HashSet<String> commonEmails = new HashSet<>(file1Emails);
+	        commonEmails.retainAll(file2Emails);
+	        System.out.println("Emails present in both files:");
+	        for (String email : commonEmails) {
+	            System.out.println(email);
+	        }
+
+	        // Emails present in file1 but not in file2
+	        HashSet<String> uniqueFile1Emails = new HashSet<>(file1Emails);
+	        uniqueFile1Emails.removeAll(file2Emails);
+	        System.out.println("\nEmails present in file1 but not in file2:");
+	        for (String email : uniqueFile1Emails) {
+	            System.out.println(email);
+	        }
+
+	        // Emails present in file2 but not in file1
+	        HashSet<String> uniqueFile2Emails = new HashSet<>(file2Emails);
+	        uniqueFile2Emails.removeAll(file1Emails);
+	        System.out.println("\nEmails present in file2 but not in file1:");
+	        for (String email : uniqueFile2Emails) {
+	            System.out.println(email);
+	        }
+
+	        // All unique emails present in both files
+	        HashSet<String> allUniqueEmails = new HashSet<>(file1Emails);
+	        allUniqueEmails.addAll(file2Emails);
+	        System.out.println("\nAll unique emails present in both files:");
+	        for (String email : allUniqueEmails) {
+	            System.out.println(email);
+	        }
+	    }
+
+	    public static HashSet<String> readEmailsFromFile(String filename) {
+	        HashSet<String> emails = new HashSet<>();
+	        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+	            String line;
+	            while ((line = reader.readLine()) != null) {
+	                emails.add(line);
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+	        return emails;
+	    }
+}
