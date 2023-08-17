@@ -1,0 +1,17 @@
+1)Import necessary classes from the java.time package, including LocalDateTime, DateTimeFormatter, and ChronoUnit.
+
+2)Create a Scanner object to read user input.
+
+3)Prompt the user to enter a date and time in the format "DD-MM-YYYY hh:mm".
+
+4)Define a DateTimeFormatter object to parse the input string using the specified pattern "dd-MM-yyyy HH:mm".
+
+5)Attempt to parse the user input into a LocalDateTime object using the formatter. If the parsing fails, output "Invalid date." and exit the program.
+
+6)Get the current date and time using LocalDateTime.now().
+
+7)Calculate the difference between the input date and time and the current date and time using ChronoUnit methods such as YEARS.between(), MONTHS.between(), WEEKS.between(), DAYS.between(), and MINUTES.between().
+
+8)For each unit of time difference (years, months, weeks, days, minutes), check if the difference is greater than 0. If it is, print the difference along with the corresponding unit.
+
+9)If no positive difference is found in the above checks, print "Invalid date."
