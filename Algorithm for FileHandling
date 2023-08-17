@@ -1,0 +1,20 @@
+1)Import the required classes for file handling (BufferedReader, BufferedWriter, File, FileReader, FileWriter), and also import Scanner for user input.
+2)Define the main class File_Handling.
+3)Define the main method:
+  Specify that the method might throw an IOException.
+4)Define the file path for the input file (filePath).
+  Create a Scanner object (sc) for user input.
+5)Display a message asking the user to enter the word they want to find (word1).
+  Display a message asking the user to enter the word they want to replace it with (word2).
+6)Create an instance of File for the input file (inputFile).
+  Create an instance of File for the temporary output file (tempFile).
+7)Create a BufferedReader (reader) to read from the input file.
+   Create a BufferedWriter (writer) to write to the temporary output file.
+8)Initialize a variable currentLine to hold the content of the current line read from the input file.
+  Use a while loop to read each line from the input file until there are no more lines left.
+13)Inside the loop:
+  Replace occurrences of word1 with word2 in the currentLine.
+  Write the modified line to the temporary output file using the writer.
+  Print a message indicating that the text has been changed successfully.
+14)After the loop completes, close the BufferedReader (reader) and the BufferedWriter (writer).
+15)Close the Scanner (sc).
