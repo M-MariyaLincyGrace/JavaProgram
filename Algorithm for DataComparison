@@ -1,0 +1,21 @@
+1)Import necessary classes including BufferedReader, FileReader, IOException, and HashSet.
+
+2)Define a class named DataComparison with the main method.
+
+3)Inside the main method:
+ a. Call the readEmailsFromFile method twice to read email addresses from two files, file1.txt and file2.txt.
+ b. Create a HashSet named commonEmails by copying the contents of file1Emails and then retaining only the common elements with file2Emails.
+ c. Print the email addresses present in both files.
+ d. Create a HashSet named uniqueFile1Emails by copying the contents of file1Emails and then removing the elements present in file2Emails.
+ e. Print the email addresses present in file1 but not in file2.
+ f. Create a HashSet named uniqueFile2Emails by copying the contents of file2Emails and then removing the elements present in file1Emails.
+ g. Print the email addresses present in file2 but not in file1.
+ h. Create a HashSet named allUniqueEmails by combining the contents of both file1Emails and file2Emails.
+ i. Print all unique email addresses present in both files.
+
+4)Define the readEmailsFromFile method that takes a filename as input and returns a HashSet of email addresses.
+ a. Initialize an empty HashSet named emails.
+ b. Use a BufferedReader to read each line from the file.
+ c. Add each line (email address) to the emails set.
+ d. Handle any IOException by printing the stack trace.
+ e. Return the emails set.
