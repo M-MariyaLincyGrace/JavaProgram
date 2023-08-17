@@ -25,9 +25,9 @@ public class File_Handling {
             while ((currentLine = reader.readLine()) != null) {
                 String modifiedLine = currentLine.replaceAll(word1, word2);
                 writer.write(modifiedLine);
-                System.out.println("Text Changed Sucessfully");
+                
             }
-
+            System.out.println("Text Changed Sucessfully");
             reader.close();
             writer.close();
             sc.close();
