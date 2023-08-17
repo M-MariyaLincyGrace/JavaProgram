@@ -15,6 +15,7 @@
 13)Inside the loop:
   Replace occurrences of word1 with word2 in the currentLine.
   Write the modified line to the temporary output file using the writer.
-  Print a message indicating that the text has been changed successfully.
-14)After the loop completes, close the BufferedReader (reader) and the BufferedWriter (writer).
-15)Close the Scanner (sc).
+14)After the loop completes, 
+   Print a message indicating that the text has been changed successfully.
+15)close the BufferedReader (reader) and the BufferedWriter (writer).
+16)Close the Scanner (sc).
